@@ -1,0 +1,43 @@
+Copyright 2013 Carlos Tse <copperoxide@gmail.com>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Mobile Apps Design and Implementation Assignment 2
+
+Well tested on iOS 6 and 7, Xcode 4.6.3 and 5.0.2
+
+1. End game algorithm is implemented, i.e., the game can be played for infinite times
+   without restart.
+
+2. 4 x 3 rows, total 12 cards with empty value will be created when the Apps started.
+   After user flips a card, a random value will generated and assigned to the card.
+
+3. A NSDictionary is used to prevent duplicate value. If duplicated, the value will be
+   re-generated. Only the unique value will be assigned to the card.
+
+4. Thanks to the empty value, the end-game checking algorithm is easier. The game will
+   be ended if and only if all cards have to be flipped at least once and no matching
+   can be done. By checking the empty value, we can ensure all cards have been flipped.
+
+5. In this game, the max. remaining cards will be 4 because if more than 4 cards
+   remains, at least one matching can be performed. By comparing the remaining cards,
+   the end-game can be detected.
+
+6. Card's function "- (CardCompareResult)compare:(Card *)card" is used to compare
+   another card.
+
+7. CoreData (SQLite) is used for storing high scores. When user finished a game,
+   the mark will be inserted. After sorting, the rank after 5th will be removed.
+   Also, the fetch limit is set to 5, such that only the top 5 scores will be shown.
+
+- END -
